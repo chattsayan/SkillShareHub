@@ -61,7 +61,7 @@ export const createCheckoutSession = async (req, res) => {
     newPurchase.paymentId = session.id;
     await newPurchase.save();
 
-    res.status(200).json({ url: session.url });
+    res.status(200).json({ success: true, url: session.url });
   } catch (error) {
     console.log("Error in createCheckoutSession controller: ", error);
   }
